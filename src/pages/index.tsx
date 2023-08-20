@@ -7,7 +7,7 @@ const Home = function ({}: Props) {
     const { switchTheme } = useContext<ThemeType>(ThemeContext);
     return (
         <React.Fragment>
-            <button onClick={switchTheme}>Toggle Theme</button>
+            <div onClick={switchTheme}>Toggle Theme</div>
         </React.Fragment>
     );
 };

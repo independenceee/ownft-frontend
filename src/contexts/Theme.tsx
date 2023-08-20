@@ -14,30 +14,29 @@ const ThemeProvider = function ({ children }: Props) {
         if (typeof window !== "undefined") {
             const savedMode = localStorage.getItem("theme");
             return savedMode ? savedMode : "LIGHT";
+        } else {
+            return "LIGHT";
         }
-
-        return "LIGHT";
     };
     const [theme, setTheme] = useState<string>(getDefaultMode());
 
     const switchTheme = function () {
-        if (theme === "LIGHT") {
-            setTheme("DARK");
-        } else {
-            setTheme("LIGHT");
-        }
+        theme === "DARK" ? setTheme("LIGHT") : setTheme("DARK");
     };
 
     useEffect(
         function () {
             if (theme === "DARK") {
-                document.body.classList.add("light");
-            } else {
+                document.body.classList.remove("light")
                 document.body.classList.add("dark");
+            }
+            if (theme === "LIGHT") {
+                document.body.classList.remove("dark")
+                document.body.classList.add("light");
+
             }
             localStorage.setItem("theme", theme);
 
-            console.log(theme);
             return function () {};
         },
         [theme],
