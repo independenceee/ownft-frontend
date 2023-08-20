@@ -31,9 +31,9 @@ const ThemeProvider = function ({ children }: Props) {
     useEffect(
         function () {
             if (theme === "DARK") {
-                document.body.classList.add("dark");
-            } else {
                 document.body.classList.add("light");
+            } else {
+                document.body.classList.add("dark");
             }
             localStorage.setItem("theme", theme);
 
