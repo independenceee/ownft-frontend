@@ -1,0 +1,183 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 96px;
+    box-sizing: border-box;
+    padding: 32px 24px;
+    transition: all 0.25s ease-in-out;
+    z-index: 10;
+
+    .container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 96px;
+        justify-content: space-between;
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            position: relative;
+
+            &::before {
+                content: "";
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background: var(--black);
+                animation: show 1s ease forwards;
+                animation-delay: 0.4s;
+            }
+
+            &:hover .logo-name {
+            }
+
+            .logo-image {
+                width: 80px;
+                height: 80px;
+            }
+
+            .logo-name {
+                margin-left: 10px;
+                font-size: 35px;
+                text-decoration: none;
+                color: var(--white);
+                font-weight: bold;
+            }
+        }
+
+        .navbar {
+            display: flex;
+            gap: 2rem;
+
+            .navbar-link {
+                cursor: pointer;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                padding: 0 12px;
+                margin: 0 10px;
+                letter-spacing: 1.08;
+                line-height: 1.42px;
+
+                &:hover .navbar-content::before {
+                    transform: scale(1);
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                &:hover .navbar-content {
+                    color: (--white);
+                }
+
+                .navbar-content {
+                    color: var(--white);
+                    font-size: 15px;
+                    line-height: 15px;
+                    letter-spacing: 0.07em;
+                    padding: 2px 0;
+                    white-space: nowrap;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        top: 0;
+                        right: 0;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        background: var(--black);
+                        animation: show 1s ease forwards;
+                        animation-delay: 0.4s;
+                    }
+
+                    &::before {
+                        background: var(--white);
+                        border-top-left-radius: 0px;
+                        border-top-right-radius: 0px;
+                        border-bottom-left-radius: 4px;
+                        border-bottom-right-radius: 4px;
+                        content: "";
+                        height: 2px;
+                        bottom: -6px;
+                        position: absolute;
+                        left: 0;
+                        opacity: 0;
+                        right: 0;
+                        transform-origin: left center;
+                        transform: scale(0);
+                        transition: all 0.3s;
+                        visibility: hidden;
+                        width: auto;
+                    }
+                }
+
+                .navbar-content-active {
+                    color: var(--white);
+                    font-size: 15px;
+                    line-height: 15px;
+                    letter-spacing: 0.07em;
+                    padding: 2px 0;
+                    white-space: nowrap;
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        top: 0;
+                        right: 0;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        background: var(--white);
+                        animation: show 1s ease forwards;
+                        animation-delay: 0.4s;
+                    }
+
+                    &::before {
+                        background: var(--white);
+                        border-top-left-radius: 0px;
+                        border-top-right-radius: 0px;
+                        border-bottom-left-radius: 4px;
+                        border-bottom-right-radius: 4px;
+                        content: "";
+                        height: 2px;
+                        bottom: -6px;
+                        position: absolute;
+                        left: 0;
+                        opacity: 1;
+                        right: 0;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.button-theme {
+    background: transparent;
+    padding: 0;
+    border: none;
+}
+
+.theme-image {
+    padding: 0;
+    border: none;
+    margin: auto;
+    display: block;
+}
+
+@keyframes show {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}

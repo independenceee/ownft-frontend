@@ -1,15 +1,8 @@
-import React, { useContext } from "react";
-import { ThemeType } from "@/configs/type";
-import { ThemeContext } from "@/contexts/Theme";
+import React from "react";
 type Props = {};
 
 const Home = function ({}: Props) {
-    const { switchTheme } = useContext<ThemeType>(ThemeContext);
-    return (
-        <React.Fragment>
-            <div onClick={switchTheme}>Toggle Theme</div>
-        </React.Fragment>
-    );
+    return <React.Fragment></React.Fragment>;
 };
 
 export default Home;

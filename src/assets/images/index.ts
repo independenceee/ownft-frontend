@@ -1,5 +1,6 @@
 const images = {
-    logo: "",
+    logo: require("./logo.jpg"),
+    themeMode: require("./theme-mode.svg"),
 };
 
 export default images;
