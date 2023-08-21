@@ -53,6 +53,7 @@ const Navbar = function ({ initial = "HOME" }: Props) {
                     {navbarItems.map(function (item, index) {
                         return (
                             <NavbarOption
+                                key={index}
                                 text={item.name}
                                 redirect={item.href}
                                 isActive={Boolean(selected === item.name)}
