@@ -23,6 +23,7 @@ const Navbar = function ({ initial = "HOME" }: Props) {
                     {publicRouter.map(function ({ name, path }, index) {
                         return (
                             <NavbarOption
+                                key={index}
                                 text={name}
                                 redirect={path}
                                 isActive={Boolean(selected === name)}

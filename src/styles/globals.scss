@@ -31,6 +31,16 @@ body {
     overflow-y: overlay;
 }
 
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 html *::-webkit-scrollbar {
     border-radius: 0;
     width: 8px;
